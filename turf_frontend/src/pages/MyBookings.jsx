@@ -14,7 +14,7 @@ const MyBookings = () => {
       const token = localStorage.getItem("token");
 
       const response = await axios.get(
-        "http://localhost:5006/api/auth/userbookings",
+        `${import.meta.env.VITE_BACKEND_BASE_URL}/api/auth/userbookings`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -43,7 +43,7 @@ const MyBookings = () => {
       const token = localStorage.getItem("token");
 
       await axios.delete(
-        `http://localhost:5006/api/auth/cancelbooking/${bookingId}`,
+        `${import.meta.env.VITE_BACKEND_BASE_URL}/api/auth/cancelbooking/${bookingId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

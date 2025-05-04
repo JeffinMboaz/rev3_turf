@@ -11,7 +11,7 @@ function UserDashboard() {
   useEffect(() => {
     const getTurfs = async () => {
       try {
-        const res = await axios.get("http://localhost:5006/api/auth/allturf",
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_BASE_URL}/api/auth/allturf`,
            {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

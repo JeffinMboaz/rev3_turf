@@ -63,7 +63,7 @@ function TNavbar() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5006/api/auth/registeras",
+        `${import.meta.env.VITE_BACKEND_BASE_URL}/api/auth/registeras`,
         formData
       );
       handleCloseSignUp();
@@ -81,7 +81,7 @@ function TNavbar() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5006/api/auth/login",
+        `${import.meta.env.VITE_BACKEND_BASE_URL}/api/auth/login`,
         loginData,
         { withCredentials: true }
       );

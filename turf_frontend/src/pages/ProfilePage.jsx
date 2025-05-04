@@ -17,7 +17,7 @@ function ProfilePage() {
   const fetchProfile = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5006/api/auth/getprofile', {
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_BASE_URL}/api/auth/getprofile`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
