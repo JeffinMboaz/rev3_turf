@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors(
     {
-        origin: ["http://localhost:5173","https://rev3-turf.vercel.app/"],
+        origin: ["http://localhost:5173","https://rev3-turf.vercel.app"],
         methods:["GET","POST","DELETE","PUT","OPTIONS"],
         credentials: true,
       }
