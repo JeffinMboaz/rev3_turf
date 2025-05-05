@@ -30,7 +30,7 @@ function BookTurf() {
         const res = await axios.get(
           `${import.meta.env.VITE_BACKEND_BASE_URL}/api/auth/getevents/${id}`,
           {
-            headers: {
+            headers: { 
               Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
           }

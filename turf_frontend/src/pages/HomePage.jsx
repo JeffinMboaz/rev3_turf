@@ -12,7 +12,7 @@ function HomePage() {
   useEffect(() => {
     const getTurfs = async () => {
       try {
-        const res = await axios.get(`${import.meta.env.VITE_BACKEND_BASE_URL}api/auth/allturfs`);
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_BASE_URL}/api/auth/allturfs`);
         SetTurfs(res.data || []);
       } catch (error) {
         console.error(error.response?.data?.message || error.message);
