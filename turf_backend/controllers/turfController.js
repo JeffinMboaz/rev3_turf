@@ -264,9 +264,16 @@ const getAllTurfs = async (req, res) => {
     res.status(500).json({ message: "Server error while fetching turfs" });
   }
 };
-  
+const getMngrTurfs = async (req, res) => {
+  try {
+    const managerId = req.user.id;
+const turfs = await Turf.find({ "createdBy.role": "manager", "createdBy.id": managerId }).sort({ createdAt: -1 });
 
-
-
+    res.status(200).json(turfs);
+  } catch (err) {
+    console.error("Error fetching turfs:", err);
+    res.status(500).json({ message: "Server error while fetching turfs" });
+  }
+};
 module.exports = { addTurfWithEvents,addEventsToTurf, getEventsByTurf,updateTurfEvent,updateTurf,
-  deleteTurfEvent,deleteTurfAndEvents, getAllTurfs  };
+  deleteTurfEvent,deleteTurfAndEvents, getAllTurfs,getMngrTurfs  };

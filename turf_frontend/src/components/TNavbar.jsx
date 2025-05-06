@@ -123,7 +123,7 @@ function TNavbar() {
                 placeholder="Fullname"
                 name="fullname"
                 value={formData.fullname}
-                onChange={handleChange}
+                onChange={handleChange} 
                 required
               />
             </FloatingLabel>
@@ -285,6 +285,8 @@ function TNavbar() {
                       <Nav.Link href="/addturf">Add Turf</Nav.Link>
                       <Nav.Link href="/viewbookings">View Bookings</Nav.Link>
                       <Nav.Link href="/updateturf">Update Turf</Nav.Link>
+                      <Nav.Link href="/profile"><FaUserCircle size={25} /></Nav.Link>
+
                     </>
                   )}
                   {userRole === "admin" && (
@@ -294,6 +296,8 @@ function TNavbar() {
                       <Nav.Link href="/reviews">Reviews</Nav.Link>
                       <Nav.Link href="/viewbookings">View Bookings</Nav.Link>
                       <Nav.Link href="/updateturf">Update Turf</Nav.Link>
+                      <Nav.Link href="/profile"><FaUserCircle size={25} /></Nav.Link>
+
                     </>
                   )}
                   <Nav.Link onClick={handleLogout}>

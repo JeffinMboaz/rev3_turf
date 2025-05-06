@@ -18,7 +18,7 @@ export const ThemeProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    document.body.className = darkMode ? "bg-dark text-light" : "bg-light text-dark";
+    document.body.className = darkMode ? "bg-secondary text-light" : "bg-light text-dark";
   }, [darkMode]);
 
   return (
